@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "BelleAPI.Controllers.ItemsController",
+    "Method": "GetAllItems",
+    "RelativePath": "api/Items",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BelleAPI.Controllers.ItemsController",
+    "Method": "AddItems",
+    "RelativePath": "api/Items",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addItemDto",
+        "Type": "BelleAPI.Models.AddItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BelleAPI.Controllers.ItemsController",
+    "Method": "SearchItems",
+    "RelativePath": "api/Items/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
