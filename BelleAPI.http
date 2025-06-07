@@ -1,0 +1,6 @@
+@BelleAPI_HostAddress = http://localhost:5034
+
+GET {{BelleAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
