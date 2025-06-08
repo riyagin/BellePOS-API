@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "BelleAPI.Controllers.CustomerController",
+    "Method": "GetAllCustomers",
+    "RelativePath": "api/Customer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BelleAPI.Controllers.CustomerController",
+    "Method": "GenerateCustomerId",
+    "RelativePath": "api/Customer/Generate-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BelleAPI.Controllers.ItemsController",
     "Method": "GetAllItems",
     "RelativePath": "api/Items",
