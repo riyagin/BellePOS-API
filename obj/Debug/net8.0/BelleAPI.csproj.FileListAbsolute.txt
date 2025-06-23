@@ -131,3 +131,4 @@ D:\Major Projects\BelleAPI\BelleAPI\obj\Debug\net8.0\BelleAPI.pdb
 D:\Major Projects\BelleAPI\BelleAPI\obj\Debug\net8.0\BelleAPI.genruntimeconfig.cache
 D:\Major Projects\BelleAPI\BelleAPI\obj\Debug\net8.0\ref\BelleAPI.dll
 D:\Major Projects\BelleAPI\BelleAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Major Projects\BelleAPI\BelleAPI\obj\Debug\net8.0\BelleAPI.sourcelink.json

@@ -8,6 +8,7 @@
         public decimal tax { get; set; }
         public decimal discount { get; set; }
         public decimal total_amount { get; set; }
+        public string MRID { get; set; }
 
     }
 }

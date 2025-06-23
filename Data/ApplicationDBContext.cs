@@ -9,7 +9,7 @@ public class ApplicationDBContext : DbContext
 
     }
 
-    public DbSet<item> items { get; set; }
+    public DbSet<product> items { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
     public DbSet<Transaction_item> Transaction_Items { get; set; }
     public DbSet<payment_detail> payment_Details { get; set; }

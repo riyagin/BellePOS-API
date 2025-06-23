@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BelleAPI.Models.Entities
+namespace BelleAPI.Models
 {
-    public class item
+    public class AddProductDto
     {
         [Key]
         public required string kode_item { get; set; }

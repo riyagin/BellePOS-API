@@ -11,14 +11,30 @@
   },
   {
     "ContainingType": "BelleAPI.Controllers.CustomerController",
-    "Method": "GenerateCustomerId",
-    "RelativePath": "api/Customer/Generate-id",
+    "Method": "AddCustomer",
+    "RelativePath": "api/Customer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addCustomerDto",
+        "Type": "BelleAPI.Models.AddCustomerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BelleAPI.Controllers.CustomerController",
+    "Method": "SearchCustomers",
+    "RelativePath": "api/Customer/search",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "name",
+        "Name": "keyword",
         "Type": "System.String",
         "IsRequired": false
       }

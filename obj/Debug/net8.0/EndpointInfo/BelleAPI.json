@@ -15,16 +15,45 @@
             "description": "OK"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCustomerDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCustomerDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCustomerDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
-    "/api/Customer/Generate-id": {
+    "/api/Customer/search": {
       "get": {
         "tags": [
           "Customer"
         ],
         "parameters": [
           {
-            "name": "name",
+            "name": "keyword",
             "in": "query",
             "schema": {
               "type": "string"
@@ -103,6 +132,41 @@
   },
   "components": {
     "schemas": {
+      "AddCustomerDto": {
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "nik": {
+            "type": "string",
+            "nullable": true
+          },
+          "tgl_lahir": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AddItemDto": {
         "required": [
           "harga",

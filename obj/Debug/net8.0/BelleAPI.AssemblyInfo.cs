@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BelleAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fad53cf8846702bc98fed7493b2d5d875a755206")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21797c63544c679fa0cb9c2db9a8bc19e93c3e47")]
 [assembly: System.Reflection.AssemblyProductAttribute("BelleAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BelleAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

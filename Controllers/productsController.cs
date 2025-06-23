@@ -1,16 +1,15 @@
 ﻿using BelleAPI.Data;
 using BelleAPI.Models;
-using BelleAPI.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BelleAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ItemsController : ControllerBase
+    public class productsController : ControllerBase
     {
         private readonly ApplicationDBContext dbContext;
-        public ItemsController(ApplicationDBContext dBContext)
+        public productsController(ApplicationDBContext dBContext)
         {
             this.dbContext = dBContext;
         }
@@ -21,7 +20,7 @@ namespace BelleAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddItems(AddItemDto addItemDto)
+        public async Task<IActionResult> AddItems(AddProductDto addItemDto)
         {
             var existingItem = await dbContext.items.FindAsync(addItemDto.kode_item);
             if (existingItem != null)
@@ -29,7 +28,7 @@ namespace BelleAPI.Controllers
                 return BadRequest($"Item with kode_item '{addItemDto.kode_item}' already exists.");
             }
 
-            var itemEntity = new item()
+            var itemEntity = new product()
             {
                 kode_item = addItemDto.kode_item,
                 nama_item = addItemDto.nama_item,

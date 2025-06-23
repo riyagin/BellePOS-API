@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BelleAPI.Models
+namespace BelleAPI.Models.Entities
 {
-    public class AddItemDto
+    public class product
     {
         [Key]
         public required string kode_item { get; set; }
@@ -12,3 +12,4 @@ namespace BelleAPI.Models
         public required decimal harga { get; set; }
     }
 }
+
