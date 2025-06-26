@@ -22,9 +22,77 @@ namespace BelleAPI.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("BelleAPI.Models.Entities.MedicalRecord", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Assessmment")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Customer_ID")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Objective")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Plan")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Subjective")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateOnly>("VisitDate")
+                        .HasColumnType("date");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MedicalRecords");
+                });
+
+            modelBuilder.Entity("BelleAPI.Models.Entities.Product", b =>
+                {
+                    b.Property<string>("kode_item")
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("harga")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("jenis")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("nama_item")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("satuan")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("kode_item");
+
+                    b.ToTable("products");
+                });
+
             modelBuilder.Entity("BelleAPI.Models.Entities.Transaction", b =>
                 {
                     b.Property<string>("Id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("MRID")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("customer_id")
@@ -107,31 +175,6 @@ namespace BelleAPI.Migrations
                     b.HasKey("id");
 
                     b.ToTable("customers");
-                });
-
-            modelBuilder.Entity("BelleAPI.Models.Entities.item", b =>
-                {
-                    b.Property<string>("kode_item")
-                        .HasColumnType("text");
-
-                    b.Property<decimal>("harga")
-                        .HasColumnType("numeric");
-
-                    b.Property<string>("jenis")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("nama_item")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("satuan")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("kode_item");
-
-                    b.ToTable("items");
                 });
 
             modelBuilder.Entity("BelleAPI.Models.Entities.payment_detail", b =>

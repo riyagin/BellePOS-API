@@ -1,5 +1,6 @@
 ﻿using BelleAPI.Data;
 using BelleAPI.Models;
+using BelleAPI.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BelleAPI.Controllers
@@ -16,19 +17,19 @@ namespace BelleAPI.Controllers
         [HttpGet]
         public IActionResult GetAllItems()
         {
-            return Ok(dbContext.items.ToList());
+            return Ok(dbContext.products.ToList());
         }
 
         [HttpPost]
         public async Task<IActionResult> AddItems(AddProductDto addItemDto)
         {
-            var existingItem = await dbContext.items.FindAsync(addItemDto.kode_item);
+            var existingItem = await dbContext.products.FindAsync(addItemDto.kode_item);
             if (existingItem != null)
             {
                 return BadRequest($"Item with kode_item '{addItemDto.kode_item}' already exists.");
             }
 
-            var itemEntity = new product()
+            var itemEntity = new Product()
             {
                 kode_item = addItemDto.kode_item,
                 nama_item = addItemDto.nama_item,
@@ -36,7 +37,7 @@ namespace BelleAPI.Controllers
                 satuan = addItemDto.satuan,
                 harga = addItemDto.harga,
             };
-            dbContext.items.Add(itemEntity);
+            dbContext.products.Add(itemEntity);
             await dbContext.SaveChangesAsync();
 
             return Ok(itemEntity);
@@ -53,7 +54,7 @@ namespace BelleAPI.Controllers
 
             keyword = keyword.ToLower();
 
-            var result = dbContext.items
+            var result = dbContext.products
                 .Where(i =>
                     i.kode_item.ToLower().Contains(keyword) ||
                     i.nama_item.ToLower().Contains(keyword))

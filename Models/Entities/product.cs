@@ -2,7 +2,7 @@
 
 namespace BelleAPI.Models.Entities
 {
-    public class product
+    public class Product
     {
         [Key]
         public required string kode_item { get; set; }
